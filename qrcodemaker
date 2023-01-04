@@ -1,0 +1,12 @@
+import re
+import qrcode
+
+# Get the name of the website
+website = 'https://website.com'
+website_name = re.search(r'(?<=://)[^/]*', website).group(0)
+
+# Create a QR code image with a transparent background
+img = qrcode.make(website)
+
+# Save the QR code to a file
+img.save(f'{website_name}_QRCODE.png')
